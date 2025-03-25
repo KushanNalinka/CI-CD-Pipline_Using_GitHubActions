@@ -30,8 +30,6 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
 
-    - name: Log in to Docker Hub  # Explicit Docker login step
-      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
     - uses: mr-smithers-excellent/docker-build-push@v6
       name: Build & push Docker image
